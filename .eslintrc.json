@@ -1,0 +1,45 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "standard-with-typescript",
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@/modules", "./src/modules"]
+        ],
+        "extensions": [".ts", ".js"]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error"
+    ],
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "no-var": "error",
+    "prefer-const": "error",
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "single"],
+    "import/no-unresolved": "error"
+  }
+}
